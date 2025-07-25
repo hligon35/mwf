@@ -1,3 +1,56 @@
+/* Optimize images for responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive container and section cards */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-card {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* Responsive grid for services and stats */
+.services-grid, .stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .services-grid, .stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .section-card {
+    padding: 1rem;
+  }
+  .container {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+  .section-card {
+    padding: 0.5rem;
+  }
+  .container {
+    padding: 0 0.25rem;
+  }
+}
 /* Reset and Base Styles */
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Open Sans',sans-serif;line-height:1.6;color:#333}
@@ -60,6 +113,8 @@ body{font-family:'Open Sans',sans-serif;line-height:1.6;color:#333}
 /* Volunteer Section */
 .volunteer{padding:5rem 0;background:#fff}
 .volunteer-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.volunteer-card{background:#f5f9f2;border-radius:12px;box-shadow:0 1px 8px rgba(56,127,47,0.10);padding:2rem;margin-bottom:1rem;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.section-card{background:#f5f9f2;border-radius:12px;box-shadow:0 1px 8px rgba(56,127,47,0.10);padding:2.5rem;margin-bottom:2rem;display:flex;flex-direction:column;align-items:center;text-align:center}
 .volunteer-text h2{color:#387f2f;font-size:2.5rem;margin-bottom:1rem}
 .volunteer-text p{margin-bottom:2rem;line-height:1.8}
 .volunteer-opportunities h3{color:#387f2f;margin-bottom:1rem}
@@ -70,17 +125,14 @@ body{font-family:'Open Sans',sans-serif;line-height:1.6;color:#333}
 /* Donation Section */
 .donate{padding:5rem 0;background:linear-gradient(135deg,#f0f8ec 0%,#f5f9f2 100%)}
 .donation-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:2rem}
-.donation-card{background:#fff;padding:2.5rem;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.donation-card{background:#fff;padding:2.5rem;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1);display:flex;flex-direction:column;align-items:center;text-align:center}
 .donation-image{margin-bottom:1.5rem;overflow:hidden;border-radius:10px}
-.donation-image img{width:100%;height:200px;object-fit:cover;border-radius:10px}
+.donation-image img{width:100%;height:400px;object-fit:cover;border-radius:10px}
 .donation-card h3{color:#387f2f;font-size:1.5rem;margin-bottom:1rem}
 .donation-card p{margin-bottom:2rem;color:#666;line-height:1.8}
 .donation-amounts{display:flex;gap:1rem;margin-bottom:2rem}
 .amount-btn{padding:10px 20px;border:2px solid #ef9509;background:#fff;color:#ef9509;border-radius:5px;cursor:pointer;font-weight:600;transition:all .3s}
 .amount-btn:hover{background:#ef9509;color:#fff}
-.needed-items h4{color:#387f2f;margin-bottom:1rem}
-.needed-items ul{list-style-position:inside}
-.needed-items li{margin-bottom:.5rem;color:#666}
 
 /* Contact and Forms */
 .contact{padding:5rem 0;background:#fff}
