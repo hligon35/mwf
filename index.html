@@ -450,8 +450,15 @@
                         </div>
                     </div>
                     
-                    <form class="contact-form" method="POST" action="#" novalidate>
+                    <form class="contact-form" method="POST" action="https://formspree.io/f/xwkzqgqg" novalidate>
                         <h3>Send us a Message</h3>
+                        <!-- Honeypot field for spam protection -->
+                        <div style="display:none;">
+                          <label for="website">Website</label>
+                          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+                        <!-- Subject field for Formspree -->
+                        <input type="hidden" name="_subject" value="Message from Melawholefoods.co">
                         <div class="form-group">
                             <label for="name" class="sr-only">Your Name</label>
                             <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
@@ -476,6 +483,7 @@
                             <textarea id="message" name="message" placeholder="Your Message" rows="5" required aria-required="true"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div id="form-success" style="display:none;color:#387f2f;margin-top:1rem;font-weight:600;">Thank you! Your message has been sent.</div>
                     </form>
                 </div>
             </div>
@@ -526,11 +534,25 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Mela Whole Foods. All rights reserved. | 501(c)(3) Non-Profit Organization</p>
-                <p>Website designed by <a href="https://www.getsparqd.com" target="_blank" rel="noopener noreferrer">SparQ Digital Media Management Company</a></p>
+                <!-- <p>Website designed by <a href="https://www.getsparqd.com" target="_blank" rel="noopener noreferrer">SparQ Digital Media Management Company</a></p> -->
             </div>
         </div>
     </footer>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var form = document.querySelector('.contact-form');
+        var successMsg = document.getElementById('form-success');
+        if(form) {
+          form.addEventListener('submit', function(e) {
+            // Let Formspree handle submission, but show success message after redirect
+            form.addEventListener('formspree:submit', function() {
+              if(successMsg) successMsg.style.display = 'block';
+            });
+          });
+        }
+      });
+    </script>
     <script src="script.js" defer></script>
 </body>
 </html>
