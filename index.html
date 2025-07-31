@@ -36,11 +36,125 @@
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Open Sans',sans-serif;line-height:1.6;color:#333}
         .header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.1);position:fixed;width:100%;top:0;z-index:1000}
-        .navbar{width:100%;padding:0 40px;display:flex;justify-content:space-between;align-items:center}
+        .navbar{width:100%;padding:0 40px;display:flex;justify-content:space-between;align-items:center;position:relative;}
         .logo{display:flex;align-items:center;gap:1rem}
         .logo-img{height:100px;width:auto;object-fit:contain}
         .logo h1{color:#387f2f;font-size:1.8rem;font-weight:700;margin:0}
         .hero{margin-top:80px;padding:4rem 0;background:linear-gradient(135deg,#f5f9f2 0%,#f5f9f2 100%);display:flex;align-items:center;justify-content:center;min-height:50vh;max-width:1200px;margin-left:auto;margin-right:auto}
+        /* Ensure anchor navigation leaves space for fixed header */
+        section[id] {
+          scroll-margin-top: 100px;
+        }
+        /* Footer Quick Links two columns */
+        .footer-section ul {
+          columns: 2;
+          -webkit-columns: 2;
+          -moz-columns: 2;
+          column-gap: 2rem;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        .footer-section ul li {
+          break-inside: avoid;
+          margin-bottom: 0.5rem;
+        }
+        /* Center footer content */
+        .footer-content {
+          justify-content: center !important;
+          text-align: center;
+        }
+        .footer-section {
+          text-align: center;
+        }
+        .footer-bottom {
+          text-align: center;
+        }
+
+        /* Responsive page margins */
+        body, main {
+          width: 100%;
+          box-sizing: border-box;
+        }
+        .container {
+          width: 100%;
+          max-width: 95vw;
+          margin-left: auto;
+          margin-right: auto;
+          box-sizing: border-box;
+        }
+        @media (max-width: 900px) {
+          body, main {
+            padding-left: 2vw;
+            padding-right: 2vw;
+          }
+          .container {
+            max-width: 98vw;
+            padding-left: 2vw;
+            padding-right: 2vw;
+          }
+        }
+        @media (max-width: 600px) {
+          body, main {
+            padding-left: 1vw;
+            padding-right: 1vw;
+          }
+          .container {
+            max-width: 99vw;
+            padding-left: 1vw;
+            padding-right: 1vw;
+          }
+        }
+
+        /* Hamburger menu styles */
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 48px;
+          height: 48px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          z-index: 2100;
+        }
+        .hamburger span {
+          display: block;
+          width: 32px;
+          height: 4px;
+          margin: 5px 0;
+          background: #387f2f;
+          border-radius: 2px;
+          transition: 0.3s;
+        }
+        @media (max-width: 900px) {
+          .hamburger {
+            display: flex;
+          }
+          .nav-menu {
+            display: none !important;
+          }
+          .nav-menu[style*="block"] {
+            display: block !important;
+          }
+        }
+        @media (min-width: 901px) {
+          .hamburger {
+            display: none !important;
+          }
+          .nav-menu {
+            display: flex !important;
+            position: static !important;
+            background: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+          }
+          .nav-menu li {
+            margin: 0 0.5rem;
+          }
+        }
     </style>
     
     <link rel="stylesheet" href="styles.css">
@@ -113,20 +227,24 @@
                     <img src="images/meta.jpg" alt="Mela Whole Foods Logo" class="logo-img" width="100" height="100">
                     <h1>Mela Whole Foods</h1>
                 </div>
-                <ul class="nav-menu" role="menubar">
-                    <li role="none"><a href="#home" role="menuitem">Home</a></li>
-                    <li role="none"><a href="#about" role="menuitem">About</a></li>
-                    <li role="none"><a href="#services" role="menuitem">Services</a></li>
-                    <li role="none"><a href="#volunteer" role="menuitem">Volunteer</a></li>
-                    <li role="none"><a href="#donate" role="menuitem">Donate</a></li>
-                    <li role="none"><a href="#merch" role="menuitem">Merch</a></li>
-                    <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
-                </ul>
-                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleNavMenu()">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
+                <ul class="nav-menu" role="menubar" id="navMenu" style="display:none;position:absolute;top:80px;right:40px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.1);border-radius:10px;padding:1rem 2rem;z-index:2000;">
+                    <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                    <li role="none"><a href="#mission" role="menuitem">Mission</a></li>
+                    <li role="none"><a href="#objectives" role="menuitem">Objectives</a></li>
+                    <li role="none"><a href="#community" role="menuitem">Community</a></li>
+                    <li role="none"><a href="#products" role="menuitem">Products & Services</a></li>
+                    <li role="none"><a href="#impact" role="menuitem">Impact</a></li>
+                    <li role="none"><a href="#innovation" role="menuitem">Innovation</a></li>
+                    <li role="none"><a href="#merch" role="menuitem">Merch</a></li>
+                    <li role="none"><a href="#volunteer" role="menuitem">Volunteer</a></li>
+                    <li role="none"><a href="#donate" role="menuitem">Donate</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+                </ul>
         </nav>
     </header>
 
@@ -425,7 +543,7 @@
                     <p>We're here to help and answer any questions you may have</p>
                 </div>
                 
-                <div class="contact-content">
+                <div class="contact-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
                     <div class="contact-info">
                         <div class="contact-item">
                             <h3>Visit Us</h3>
@@ -515,10 +633,17 @@
                 <div class="footer-section" style="flex:1;min-width:180px;">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#mission">Mission</a></li>
+                        <li><a href="#objectives">Objectives</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#products">Products & Services</a></li>
+                        <li><a href="#impact">Impact</a></li>
+                        <li><a href="#innovation">Innovation</a></li>
+                        <li><a href="#merch">Merch</a></li>
                         <li><a href="#volunteer">Volunteer</a></li>
                         <li><a href="#donate">Donate</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section" style="flex:1;min-width:180px;">
@@ -527,8 +652,8 @@
                         123 Community Way<br>
                         Hometown, ST 12345
                     </address>
-                    <p>Phone: <a href="tel:+15551234567">(555) 123-4567</a></p>
-                    <p>Email: info@melawholefoods.org<a href="mailto:info@melawholefoods.org">info@melawholefoods.org</a></p>
+                    <p>Phone: <a href="tel:+15551234567" style="color:#fff;text-decoration:underline;font-size:1.15rem;"></a></p>
+                    <p>Email: <a href="mailto:info@melawholefoods.co" style="color:#fff;text-decoration:underline;font-size:1.15rem;">info@melawholefoods.co</a></p>
                 </div>
             </div>
             
@@ -540,6 +665,21 @@
     </footer>
 
     <script>
+      function toggleNavMenu() {
+        var navMenu = document.getElementById('navMenu');
+        var hamburger = document.querySelector('.hamburger');
+        var expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        if(navMenu) {
+          if(navMenu.style.display === 'block') {
+            navMenu.style.display = 'none';
+            hamburger.setAttribute('aria-expanded', 'false');
+          } else {
+            navMenu.style.display = 'block';
+            hamburger.setAttribute('aria-expanded', 'true');
+          }
+        }
+      }
+
       document.addEventListener('DOMContentLoaded', function() {
         var form = document.querySelector('.contact-form');
         var successMsg = document.getElementById('form-success');
@@ -551,6 +691,29 @@
             });
           });
         }
+        // Close nav menu when a nav link is clicked
+        var navMenu = document.getElementById('navMenu');
+        var hamburger = document.querySelector('.hamburger');
+        if(navMenu && hamburger) {
+          var navLinks = navMenu.querySelectorAll('a');
+          navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+              navMenu.style.display = 'none';
+              hamburger.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+        // Hide nav menu when clicking outside
+        document.addEventListener('click', function(e) {
+          var navMenu = document.getElementById('navMenu');
+          var hamburger = document.querySelector('.hamburger');
+          if(navMenu && hamburger && navMenu.style.display === 'block') {
+            if(!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+              navMenu.style.display = 'none';
+              hamburger.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
       });
     </script>
     <script src="script.js" defer></script>
