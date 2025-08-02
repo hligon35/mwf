@@ -27,27 +27,7 @@ img {
   justify-content: center;
 }
 
-@media (max-width: 900px) {
-  /* Shrink empowerment image for stacking */
-  .community-flex img[alt="Community Empowerment"] {
-    width: 350px !important;
-    height: 350px !important;
-    max-width: 90vw !important;
-    margin-bottom: 1.5rem !important;
-    margin-top: 0 !important;
-    display: block;
-  }
-}
-
-@media (max-width: 600px) {
-  .community-flex img[alt="Community Empowerment"] {
-    width: 250px !important;
-    height: 250px !important;
-    max-width: 95vw !important;
-    margin-bottom: 1rem !important;
-  }
-}
-
+/* Base responsive styles - cleaned up */
 @media (max-width: 900px) {
   .services-grid, .stats {
     flex-direction: column;
@@ -57,13 +37,7 @@ img {
     padding: 1rem;
   }
   .container {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    box-sizing: border-box !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
+    padding: 0 0.5rem;
   }
   body {
     overflow-x: hidden !important;
@@ -78,11 +52,7 @@ img {
     padding: 0.5rem;
   }
   .container {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    box-sizing: border-box !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
+    padding: 0 0.25rem;
   }
   body {
     overflow-x: hidden !important;
@@ -279,9 +249,6 @@ html{scroll-behavior:auto}
 }
 
 /* Mission & Vision section responsive optimization */
-@media(max-width:768px){
-  #mission .container > div {
-
 @media(max-width:900px){
   /* Stack Community Empowerment image above card */
   #community .container > div {
@@ -311,6 +278,11 @@ html{scroll-behavior:auto}
     overflow-x: hidden !important;
   }
 }
+
+/* Responsive improvements for cards and sections */
+@media(max-width:900px){
+  /* Mission & Vision cards */
+  #mission .container > div {
     flex-direction:column !important;
     gap:2rem !important;
     align-items:center !important;
@@ -354,60 +326,6 @@ html{scroll-behavior:auto}
     box-sizing:border-box;
   }
 
-  /* Educational Outreach & Local First cards */
-  section[style*="background:#fff;padding:2rem 0;"] .container > div {
-    flex-direction:column !important;
-    gap:1.5rem !important;
-    align-items:center !important;
-  }
-  section[style*="background:#fff;padding:2rem 0;"] .container > div > div {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:1rem !important;
-    padding:1rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Impact cards */
-  #impact .section-card > div {
-    flex-direction:column !important;
-    gap:1.5rem !important;
-    align-items:center !important;
-  }
-  #impact .section-card > div > div {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:1rem !important;
-    padding:1rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Merch card */
-  #merch .container > div {
-    flex-direction:column !important;
-    align-items:center !important;
-  }
-  #merch .container > div > div {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:1rem !important;
-    padding:1rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Center merch product image */
-  #merch .container > div > div img {
-    display:block !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    max-width:350px !important;
-    width:100% !important;
-    height:auto !important;
-  }
-
   /* Volunteer cards */
   #volunteer .volunteer-content {
     flex-direction:column !important;
@@ -420,185 +338,6 @@ html{scroll-behavior:auto}
     width:100% !important;
     margin-bottom:1rem !important;
     padding:1rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Donation cards */
-  #donate .donation-options {
-    flex-direction:column !important;
-    gap:1.5rem !important;
-    align-items:center !important;
-    display:flex !important;
-  }
-  #donate .donation-options > article {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:1rem !important;
-    padding:1rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Contact cards */
-  #contact .contact-content {
-    flex-direction:column !important;
-    gap:1.5rem !important;
-    align-items:center !important;
-    display:flex !important;
-  }
-  #contact .contact-content > div, #contact .contact-content > form {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:1rem !important;
-    padding:1rem !important;
-    box-sizing:border-box;
-  }
-}
-
-@media(max-width:480px){
-  #mission .container > div {
-    flex-direction:column !important;
-    gap:1rem !important;
-    align-items:center !important;
-  }
-  #mission .container > div > div {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:1rem !important;
-    padding:0.5rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Objectives cards */
-  #objectives .section-card > div {
-    flex-direction:column !important;
-    gap:1rem !important;
-    align-items:center !important;
-  }
-  #objectives .section-card > div > div {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:0.5rem !important;
-    padding:0.5rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Products & Services cards */
-  #products .section-card > div {
-    flex-direction:column !important;
-    gap:1rem !important;
-    align-items:center !important;
-  }
-  #products .section-card > div > div {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:0.5rem !important;
-    padding:0.5rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Educational Outreach & Local First cards */
-  section[style*="background:#fff;padding:2rem 0;"] .container > div {
-    flex-direction:column !important;
-    gap:1rem !important;
-    align-items:center !important;
-  }
-  section[style*="background:#fff;padding:2rem 0;"] .container > div > div {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:0.5rem !important;
-    padding:0.5rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Impact cards */
-  #impact .section-card > div {
-    flex-direction:column !important;
-    gap:1rem !important;
-    align-items:center !important;
-  }
-  #impact .section-card > div > div {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:0.5rem !important;
-    padding:0.5rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Merch card */
-  #merch .container > div {
-    flex-direction:column !important;
-    align-items:center !important;
-  }
-  #merch .container > div > div {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:0.5rem !important;
-    padding:0.5rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Center merch product image */
-  #merch .container > div > div img {
-    display:block !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    max-width:250px !important;
-    width:100% !important;
-    height:auto !important;
-  }
-
-  /* Volunteer cards */
-  #volunteer .volunteer-content {
-    flex-direction:column !important;
-    gap:1rem !important;
-    align-items:center !important;
-  }
-  #volunteer .volunteer-content > div {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:0.5rem !important;
-    padding:0.5rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Donation cards */
-  #donate .donation-options {
-    flex-direction:column !important;
-    gap:1rem !important;
-    align-items:center !important;
-    display:flex !important;
-  }
-  #donate .donation-options > article {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:0.5rem !important;
-    padding:0.5rem !important;
-    box-sizing:border-box;
-  }
-
-  /* Contact cards */
-  #contact .contact-content {
-    flex-direction:column !important;
-    gap:1rem !important;
-    align-items:center !important;
-    display:flex !important;
-  }
-  #contact .contact-content > div, #contact .contact-content > form {
-    min-width:0 !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-bottom:0.5rem !important;
-    padding:0.5rem !important;
     box-sizing:border-box;
   }
 }

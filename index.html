@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="robots" content="index, follow">
@@ -40,7 +40,8 @@
           }
         }
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Open Sans',sans-serif;line-height:1.6;color:#333}
+        html { overflow-x: hidden; }
+        body{font-family:'Open Sans',sans-serif;line-height:1.6;color:#333;overflow-x:hidden;}
         .header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.1);position:fixed;width:100%;top:0;z-index:1000}
         .navbar{width:100%;padding:0 40px;display:flex;justify-content:space-between;align-items:center;position:relative;}
         .logo{display:flex;align-items:center;gap:1rem}
@@ -77,10 +78,426 @@
           text-align: center;
         }
 
+        /* Hero section responsive fixes */
+        @media (max-width: 1024px) and (min-width: 769px) {
+          .hero-content > div {
+            gap: 1.5rem !important;
+          }
+          .hero-content > div > div {
+            max-width: 300px !important;
+          }
+          .hero-content h1 {
+            font-size: 2rem !important;
+          }
+          .hero-content p {
+            font-size: 1.1rem !important;
+          }
+          .hero-content img {
+            width: 300px !important;
+            height: 300px !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          .hero-content > div {
+            flex-direction: column !important;
+            gap: 1.5rem !important;
+            align-items: center !important;
+          }
+          .hero-content > div > div {
+            flex: none !important;
+            width: 100% !important;
+            max-width: 400px !important;
+          }
+          .hero-content h1 {
+            font-size: 1.8rem !important;
+          }
+          .hero-content p {
+            font-size: 1rem !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .hero-content h1 {
+            font-size: 1.5rem !important;
+          }
+          .hero-content p {
+            font-size: 0.95rem !important;
+          }
+          .hero-content img {
+            width: 280px !important;
+            height: 280px !important;
+          }
+        }
+
+        /* Mission & Vision responsive fixes */
+        @media (max-width: 1024px) and (min-width: 769px) {
+          #mission .container > div {
+            gap: 2rem !important;
+          }
+          #mission .container > div > div {
+            min-width: 350px !important;
+            max-width: 450px !important;
+            padding: 1.5rem !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          #mission .container > div {
+            flex-direction: column !important;
+            gap: 2rem !important;
+            align-items: center !important;
+          }
+          #mission .container > div > div {
+            min-width: 0 !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0 1rem !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          #mission .container > div {
+            gap: 1.5rem !important;
+          }
+          #mission .container > div > div {
+            padding: 1.5rem !important;
+            margin: 0 0.5rem !important;
+          }
+        }
+
+        /* Objectives section responsive fixes */
+        @media (max-width: 1024px) and (min-width: 769px) {
+          #objectives .section-card > div > div {
+            max-width: 300px !important;
+            padding: 1.25rem !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          #objectives .section-card > div {
+            flex-direction: column !important;
+            gap: 1.5rem !important;
+          }
+          #objectives .section-card > div > div {
+            max-width: 100% !important;
+            flex: none !important;
+            margin: 0 !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          #objectives .section-card > div > div {
+            padding: 1rem !important;
+            margin: 0 !important;
+          }
+        }
+
+        /* Community Empowerment responsive fixes */
+        @media (max-width: 1024px) and (min-width: 769px) {
+          .community-flex {
+            gap: 1.5rem !important;
+          }
+          .community-flex img {
+            width: 400px !important;
+            height: 400px !important;
+            max-width: 45vw !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          .community-flex {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 1.5rem !important;
+          }
+          .community-flex > div:first-child {
+            order: 1;
+            display: flex !important;
+            justify-content: center !important;
+          }
+          .community-flex img {
+            width: 350px !important;
+            height: 350px !important;
+            max-width: 90vw !important;
+            flex: none !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .community-flex img {
+            width: 280px !important;
+            height: 280px !important;
+            max-width: 95vw !important;
+          }
+        }
+
+        /* Products & Services responsive fixes */
+        @media (max-width: 1024px) and (min-width: 769px) {
+          #products .section-card > div > div {
+            max-width: 350px !important;
+            padding: 1.25rem !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          #products .section-card > div {
+            flex-direction: column !important;
+            gap: 1.5rem !important;
+          }
+          #products .section-card > div > div {
+            max-width: 100% !important;
+            flex: none !important;
+            margin: 0 !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          #products .section-card > div > div {
+            padding: 1rem !important;
+            margin: 0 !important;
+          }
+        }
+
+        /* Innovation/Services grid responsive fixes */
+        @media (max-width: 1024px) and (min-width: 769px) {
+          .services-grid {
+            gap: 1.5rem !important;
+          }
+          .service-card {
+            max-width: 220px !important;
+            padding: 0.75rem !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          .services-grid {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 1.5rem !important;
+          }
+          .service-card {
+            max-width: 350px !important;
+            width: 100% !important;
+            margin: 0 !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .service-card {
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 1rem !important;
+          }
+        }
+
+        /* Stats grid responsive fixes */
+        @media (max-width: 900px) {
+          .stats {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 1rem !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .stats {
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+          }
+          .stat {
+            min-width: 0 !important;
+            padding: 1rem !important;
+          }
+        }
+
+        /* Volunteer section responsive fixes */
+        @media (max-width: 1024px) and (min-width: 769px) {
+          .volunteer-content {
+            gap: 1.5rem !important;
+          }
+          .volunteer-image {
+            min-width: 350px !important;
+          }
+          .volunteer-image img {
+            max-width: 350px !important;
+            width: 100% !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          .volunteer-content {
+            flex-direction: column !important;
+            gap: 1.5rem !important;
+            align-items: center !important;
+          }
+          .volunteer-card, .volunteer-image {
+            min-width: 0 !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+          }
+          .volunteer-image img {
+            max-width: 400px !important;
+            width: 100% !important;
+            height: auto !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .volunteer-card, .volunteer-image {
+            margin: 0 !important;
+          }
+          .volunteer-image img {
+            max-width: 300px !important;
+          }
+        }
+
+        /* Contact section responsive fixes */
+        @media (max-width: 900px) {
+          .contact-content {
+            flex-direction: column !important;
+            gap: 2rem !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .contact-info, .contact-form {
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .contact-info, .contact-form {
+            margin: 0 !important;
+          }
+          .contact-form {
+            padding: 1.5rem !important;
+          }
+        }
+
+        /* Educational Outreach section responsive fixes */
+        @media (max-width: 1024px) and (min-width: 769px) {
+          section[style*="max-width:1800px"] > div > div {
+            gap: 2rem !important;
+          }
+          section[style*="max-width:1800px"] > div > div > div {
+            max-width: 400px !important;
+          }
+          section[style*="max-width:1800px"] .section-card {
+            padding: 1.5rem !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          section[style*="max-width:1800px"] > div > div {
+            flex-direction: column !important;
+            gap: 2rem !important;
+            align-items: center !important;
+          }
+          section[style*="max-width:1800px"] > div > div > div {
+            min-width: 0 !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          section[style*="max-width:1800px"] > div > div {
+            gap: 1.5rem !important;
+          }
+          section[style*="max-width:1800px"] > div > div > div {
+            margin: 0 !important;
+          }
+          section[style*="max-width:1800px"] .section-card {
+            padding: 1.5rem !important;
+          }
+        }
+
+        /* Button responsive fixes */
+        @media (max-width: 600px) {
+          .hero-buttons {
+            flex-direction: column !important;
+            gap: 1rem !important;
+            align-items: center !important;
+          }
+          .hero-buttons a {
+            margin: 0 !important;
+            width: 200px !important;
+            text-align: center !important;
+          }
+        }
+
+        /* General container and padding fixes */
+        @media (max-width: 1024px) and (min-width: 769px) {
+          body, main {
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+          }
+          .container {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            max-width: calc(100vw - 3rem) !important;
+          }
+          section {
+            padding: 1.75rem 0 !important;
+          }
+          h1 {
+            font-size: 2rem !important;
+          }
+          h2 {
+            font-size: 1.5rem !important;
+          }
+          h3 {
+            font-size: 1.2rem !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          body, main {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+          }
+          .container {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            max-width: calc(100vw - 2rem) !important;
+          }
+          section {
+            padding: 1.5rem 0 !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          body, main {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+          }
+          .container {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+            max-width: calc(100vw - 1rem) !important;
+          }
+          section {
+            padding: 1rem 0 !important;
+          }
+          h1 {
+            font-size: 1.5rem !important;
+          }
+          h2 {
+            font-size: 1.3rem !important;
+          }
+          h3 {
+            font-size: 1.1rem !important;
+          }
+        }
+
         /* Responsive page margins */
         body, main {
           width: 100%;
           box-sizing: border-box;
+          overflow-x: hidden;
         }
         .container {
           width: 100%;
@@ -88,28 +505,6 @@
           margin-left: auto;
           margin-right: auto;
           box-sizing: border-box;
-        }
-        @media (max-width: 900px) {
-          body, main {
-            padding-left: 2vw;
-            padding-right: 2vw;
-          }
-          .container {
-            max-width: 98vw;
-            padding-left: 2vw;
-            padding-right: 2vw;
-          }
-        }
-        @media (max-width: 600px) {
-          body, main {
-            padding-left: 1vw;
-            padding-right: 1vw;
-          }
-          .container {
-            max-width: 99vw;
-            padding-left: 1vw;
-            padding-right: 1vw;
-          }
         }
 
         /* Hamburger menu styles */
@@ -187,6 +582,46 @@
           }
           .logo {
             margin-right: 2rem !important;
+          }
+        }
+
+        /* Navbar mobile fixes */
+        @media (max-width: 1024px) and (min-width: 769px) {
+          .navbar {
+            padding: 0 25px !important;
+          }
+          .logo h1 {
+            font-size: 1.6rem !important;
+          }
+          .logo-img {
+            height: 90px !important;
+            width: 90px !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          .navbar {
+            padding: 0 20px !important;
+          }
+          .logo h1 {
+            font-size: 1.4rem !important;
+          }
+          .logo-img {
+            height: 80px !important;
+            width: 80px !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .navbar {
+            padding: 0 15px !important;
+          }
+          .logo h1 {
+            font-size: 1.2rem !important;
+          }
+          .logo-img {
+            height: 70px !important;
+            width: 70px !important;
           }
         }
     </style>
@@ -307,12 +742,12 @@
         <!-- Mission & Vision Section -->
         <section id="mission" style="background:#fff;padding:2rem 0;">
             <div class="container" style="max-width:1600px;margin:auto;">
-                <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:6rem;justify-content:center;align-items:center;text-align:center;">
-                    <div style="background:#f5f9f2;border-radius:10px;box-shadow:0 1px 4px rgba(56,127,47,0.07);padding:2rem;flex:1;min-width:700px;max-width:700px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+                <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:3rem;justify-content:center;align-items:stretch;text-align:center;">
+                    <div style="background:#f5f9f2;border-radius:10px;box-shadow:0 1px 4px rgba(56,127,47,0.07);padding:2rem;flex:1;min-width:400px;max-width:650px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
                         <h2 style="color:#387f2f;text-align:center;">Mission Statement</h2>
                         <p style="font-size:1.1rem;text-align:center;">Our mission is to create a thriving, community-centered grocery store that provides affordable, fresh, and high-quality food to areas where there are food deserts, senior citizens who are unable to access grocery stores, the disabled and low-income families. We are committed to bridging the gap in food access by offering nutritious options at prices that empower families to thrive. At the heart of our business is a deep dedication to fostering economic growth and sustainability, with a particular focus on promoting ownership and leadership within the food industry. Through community engagement, local partnerships, and a commitment to excellence, we aim to build a space where families feel valued, supported, and connected, all while creating opportunities for economic empowerment and long-term generational wealth for entrepreneurs.</p>
                     </div>
-                    <div style="background:#f5f9f2;border-radius:10px;box-shadow:0 1px 4px rgba(56,127,47,0.07);padding:2rem;flex:1;min-width:700px;max-width:700px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+                    <div style="background:#f5f9f2;border-radius:10px;box-shadow:0 1px 4px rgba(56,127,47,0.07);padding:2rem;flex:1;min-width:400px;max-width:650px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
                         <h2 style="color:#387f2f;text-align:center;">Vision</h2>
                         <p style="font-size:1.1rem;text-align:center;">To create a vibrant, thriving grocery store that serves as a cornerstone for economic stability in underserved communities. By making nutritious and affordable food accessible to all, we aim to empower individuals to lead healthier lives while fostering local prosperity. Our commitment to sustainability drives our operations, ensuring that every product we offer is sourced responsibly, with an emphasis on environmental stewardship. Above all, we champion entrepreneurs, providing a platform to showcase and uplift their businesses, thus building a more equitable and resilient economy for future generations.</p>
                     </div>
